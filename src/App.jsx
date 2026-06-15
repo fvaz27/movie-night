@@ -27,12 +27,18 @@ export default function App() {
     setMovies(movieToggle);
   }
 
-
-  
+  let numMovies = movies.length;
+  let numViewed = movies.filter((movie)=> {
+    if(movie.watched === true){
+      return movie
+    }
+    }).length
+  let numNotViewed = numMovies - numViewed;
 
   return (
     <div>
     <h1>Movie Night</h1>
+    <h2>Total Movies: {numMovies}   Watched: {numViewed}  UnWatched: {numNotViewed}</h2>
     {movies.map((movie) => <MovieCard key={movie.id} movie={movie} onToggle={toggleWatched}/>)}
     </div>
   )
