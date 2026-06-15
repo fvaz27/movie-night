@@ -1,5 +1,6 @@
 function MovieCard(props) {
     const movie = props.movie;
+    const toggle = props.onToggle;
     let text;
 
     if(movie.watched){
@@ -18,9 +19,14 @@ function MovieCard(props) {
             }   
             </p>
             <br />
+            <button onClick={() => toggle(movie.id)}>
+               {text}
+            </button>
         </>
     )
 
 }
+
+
 
 export default MovieCard;
