@@ -10,10 +10,14 @@ const initialMovies = [
   { id: 6, title: "Get Out",                            genre: "Horror",    year: 2017, watched: false },
 ]
 
+
 export default function App() {
+  const[movies, setMovies] = useState(initialMovies);
   return (
     <div>
-      <h2>hello</h2>
+    <h1>Movie Night</h1>
+    {movies.map((movie)=> <div key={movie.id}>{movie.title}: {movie.genre} {movie.year}</div>)}
+
     </div>
   )
 }
